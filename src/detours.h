@@ -175,8 +175,16 @@ typedef ULONG ULONG_PTR;
 #undef _Pre_notnull_
 #endif
 
+#ifndef _Always_
+#define _Always_(x)
+#endif
+
 #if defined(_Deref_out_opt_z_) && !defined(_Outptr_result_maybenull_)
 #define _Outptr_result_maybenull_ _Deref_out_opt_z_
+#endif
+
+#ifndef _Deref_out_range_
+#define _Deref_out_range_(x,y)
 #endif
 
 #if defined(_In_count_) && !defined(_In_reads_)
@@ -248,7 +256,7 @@ typedef ULONG ULONG_PTR;
 #endif
 
 #ifndef _In_reads_or_z_
-#define _In_reads_or_z_
+#define _In_reads_or_z_(x)
 #endif
 
 #ifndef _In_z_
