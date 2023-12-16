@@ -334,6 +334,10 @@ typedef ULONG ULONG_PTR;
 #endif // DETOURS_INTERNAL
 #endif // DETOURS_DONT_REMOVE_SAL_20
 
+#if (_MSC_VER < 1310)
+#include "strsafecompat.hpp"
+#endif
+
 //////////////////////////////////////////////////////////////////////////////
 //
 #ifndef GUID_DEFINED
